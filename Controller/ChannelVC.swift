@@ -9,6 +9,12 @@
 import UIKit
 
 class ChannelVC: UIViewController {
+    //outlet
+    
+    @IBAction func unWind(segue:UIStoryboardSegue){
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
