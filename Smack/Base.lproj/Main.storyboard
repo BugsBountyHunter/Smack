@@ -181,7 +181,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cac-PJ-cLR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cac-PJ-cLR" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="284" width="250" height="40"/>
                                 <color key="backgroundColor" red="0.015686274510000001" green="0.64313725489999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -255,7 +255,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZH-gC-SKw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZH-gC-SKw" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62" y="607" width="250" height="40"/>
                                 <color key="backgroundColor" red="0.015686274510000001" green="0.64313725489999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -263,9 +263,12 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="g62-M2-tnc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountBtnPressed:" destination="FfK-KT-Iky" eventType="touchUpInside" id="0p2-pO-f7Z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G15-aJ-Cur">
                                 <rect key="frame" x="331" y="36" width="28" height="28"/>
@@ -316,7 +319,7 @@
                                         <rect key="frame" x="0.0" y="78" width="250" height="17"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4i-Au-TZL" userLabel="divider">
                                         <rect key="frame" x="0.0" y="105" width="250" height="2"/>
@@ -344,12 +347,18 @@
                                 <state key="normal" title="Choose Avatare">
                                     <color key="titleColor" red="0.015686274510000001" green="0.64313725489999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="imageBGBtn:" destination="FfK-KT-Iky" eventType="touchUpInside" id="Vdg-Ri-OgF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9U-d8-dWZ">
                                 <rect key="frame" x="93" y="477" width="188" height="30"/>
                                 <state key="normal" title="Generate Background color">
                                     <color key="titleColor" red="0.015686274510000001" green="0.64313725489999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pickBGColorPressed:" destination="FfK-KT-Iky" eventType="touchUpInside" id="cmf-Bn-pQQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -373,6 +382,10 @@
                         <viewLayoutGuide key="safeArea" id="pkg-fH-3Ac"/>
                     </view>
                     <connections>
+                        <outlet property="emailTXT" destination="mTf-gi-lCI" id="XN4-Ep-N2c"/>
+                        <outlet property="passwordTXT" destination="N2K-mf-l8V" id="Cet-d6-Eec"/>
+                        <outlet property="pickImg" destination="7NW-AR-kL2" id="QLO-cl-5l2"/>
+                        <outlet property="userNameTXT" destination="lTt-sT-NUP" id="HST-US-Wt4"/>
                         <segue destination="eAb-v6-seu" kind="unwind" identifier="unWind" unwindAction="unWindWithSegue:" id="vcP-8V-4Jp"/>
                     </connections>
                 </viewController>
