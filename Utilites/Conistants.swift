@@ -23,6 +23,9 @@ typealias completionHandler = (_ Success: Bool) -> ()
 
 let HEADER = ["content-type":"application/json; charset=utf-8"]
 
+//Notification Constants
+
+let NOTIF_USER_DATA_CHANGE = Notification.Name("notifUserDataChanged")
 
 
 //URl
@@ -35,3 +38,7 @@ let ADD_USER = ("\(BASE_URL)user/add")
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unWind"
+let TO_AVATAR_PICKER = "toAvatarPicker"
+
+// Colors
+ let smackPurplePlaceholder = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 0.5520513804)
